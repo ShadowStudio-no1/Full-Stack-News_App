@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-newspaper"></i> News Express</h1>
+                <div class="header-right">
+                    <div class="weather-widget">
+                        <div class="weather-icon-container">
+                            <i class="weather-icon fas fa-cloud"></i>
+                            <span class="temp">--°C</span>
+                        </div>
+                        <div class="weather-info">
+                            <span class="location">Loading...</span>
+                            <span class="description">...</span>
+                        </div>
+                    </div>
+                    <button id="themeToggle" class="theme-toggle">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search news...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="category-filters">
+                <button class="active" data-category="general">General</button>
+                <button data-category="technology">Tech</button>
+                <button data-category="business">Business</button>
+                <button data-category="sports">Sports</button>
+                <button data-category="entertainment">Entertainment</button>
+                <button data-category="health">Health</button>
+                <button data-category="science">Science</button>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="live-tv-section">
+                    <h2><i class="fas fa-tv"></i> Live TV</h2>
+                    <div class="channels-list">
+                        <button class="channel-btn active" data-channel="aajtak1">
+                            <img src="images/aajtak.svg" alt="Aaj Tak">
+                            <span>Aaj Tak HD</span>
+                            <div class="channel-hover-effect"></div>
+                        </button>
+                        <button class="channel-btn" data-channel="aajtak2">
+                            <img src="images/aajtak.svg" alt="Aaj Tak">
+                            <span>Aaj Tak</span>
+                            <div class="channel-hover-effect"></div>
+                        </button>
+                        <button class="channel-btn" data-channel="tez">
+                            <img src="images/tez.svg" alt="Tez">
+                            <span>Tez News</span>
+                            <div class="channel-hover-effect"></div>
+                        </button>
+                        <button class="channel-btn" data-channel="indiatoday">
+                            <img src="images/indiatoday.svg" alt="India Today">
+                            <span>India Today</span>
+                            <div class="channel-hover-effect"></div>
+                        </button>
+                    </div>
+                    <div class="video-container">
+                        <div class="video-overlay"></div>
+                        <video id="videoPlayer"></video>
+                        <div class="live-badge"><span>LIVE</span></div>
+                        <div class="video-controls-overlay">
+                            <div class="top-controls">
+                                <div class="quality-selector">
+                                    <button id="qualityBtn" class="control-btn">
+                                        <i class="fas fa-cog"></i>
+                                        <span>Auto</span>
+                                    </button>
+                                    <div class="quality-menu">
+                                        <button data-quality="-1" class="active">Auto</button>
+                                        <button data-quality="2">High</button>
+                                        <button data-quality="1">Medium</button>
+                                        <button data-quality="0">Low</button>
+                                    </div>
+                                </div>
+                                <div class="connection-status">
+                                    <i class="fas fa-signal"></i>
+                                    <span id="connectionSpeed">Good</span>
+                                </div>
+                            </div>
+                            <div class="custom-controls">
+                                <div class="progress-bar">
+                                    <div class="progress-bar-filled"></div>
+                                    <div class="progress-bar-loaded"></div>
+                                </div>
+                                <div class="controls-main">
+                                    <div class="controls-left">
+                                        <button class="control-btn" id="playPauseBtn">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button class="control-btn" id="muteBtn">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                        <div class="volume-slider">
+                                            <div class="volume-slider-filled"></div>
+                                        </div>
+                                        <div class="time-display">
+                                            <span id="currentTime">00:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="controls-right">
+                                        <button class="control-btn" id="fullscreenBtn">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-info">
+                                <div class="channel-info">
+                                    <img id="currentChannelLogo" src="images/aajtak.svg" alt="Current Channel">
+                                    <div class="channel-details">
+                                        <span id="currentChannelName">Aaj Tak HD</span>
+                                        <span class="viewer-count"><i class="fas fa-eye"></i> <span id="viewerCount">Live</span></span>
+                                    </div>
+                                </div>
+                                <div class="stream-stats">
+                                    <span id="streamQuality">HD</span>
+                                    <span id="streamHealth">Excellent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cricket-scores">
+                    <h2><i class="fas fa-cricket"></i> Live Cricket</h2>
+                    <div class="match-container">
+                        <div class="match-card">
+                            <div class="match-header">IPL 2024</div>
+                            <div class="team-scores">
+                                <div class="team">
+                                    <img src="images/mi.svg" alt="MI">
+                                    <span>MI</span>
+                                    <span class="score">186/4</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <img src="images/csk.svg" alt="CSK">
+                                    <span>CSK</span>
+                                    <span class="score">189/2</span>
+                                </div>
+                            </div>
+                            <div class="match-status">CSK won by 8 wickets</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="news-container">
+                <div id="newsGrid" class="news-grid">
+                    <!-- News cards will be inserted here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- News Detail Modal -->
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <div class="news-meta">
+                    <span id="modalDate"></span>
+                    <span id="modalSource"></span>
+                </div>
+            </div>
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="News Image">
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+                <div class="modal-actions">
+                    <a id="modalReadMore" href="#" target="_blank" class="read-more-btn">
+                        <i class="fas fa-external-link-alt"></i> Read Full Article
+                    </a>
+                    <button id="modalShare" class="share-btn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="app.js"></script>
+</body>
+</html>
