@@ -2,7 +2,7 @@
 
 A full-stack news application with live TV streaming, real-time weather updates, and a modern user interface. Built with Node.js, Express, and vanilla JavaScript.
 
-![News App Screenshot]([screenshots/app-preview.png](https://raw.githubusercontent.com/ShadowStudio-no1/Full-Stack-News_App/refs/heads/main/images/privew1.png))
+![News App Screenshot](https://raw.githubusercontent.com/ShadowStudio-no1/Full-Stack-News_App/refs/heads/main/images/privew1.png)
 
 ## 🚀 Features
 
