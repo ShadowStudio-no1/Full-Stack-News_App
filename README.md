@@ -1,140 +1,161 @@
-# Modern News App with Live TV
 
-A full-stack news application with live TV streaming, real-time weather updates, and a modern user interface. Built with Node.js, Express, and vanilla JavaScript.
+# 🌐 Modern News App with Live TV
+
+A fully-featured full-stack **News Application** with Live TV Streaming, Real-Time Weather Updates, and a polished, responsive, and interactive user interface. Built using **Node.js**, **Express**, and **Vanilla JavaScript**, this app delivers fast, reliable, and user-friendly content consumption across all devices.
 
 ![News App Screenshot](https://raw.githubusercontent.com/ShadowStudio-no1/Full-Stack-News_App/refs/heads/main/images/privew1.png)
 
-## 🚀 Features
+---
 
-### News Section
-- Real-time news updates via NewsAPI
-- Category-based news filtering
-- Advanced search functionality
-- Responsive news grid layout
-- News article modal with sharing options
-- Image lazy loading and caching
-- Fallback data handling
+## 🚀 Core Features
 
-### Live TV Section
-- Multiple news channels streaming
-- Custom video player controls
-- Quality selection (Auto/High/Medium/Low)
-- Stream health monitoring
-- Channel information overlay
-- Keyboard shortcuts for playback
-- Mobile-optimized controls
+### 📰 News Section
+- Real-time news updates using **NewsAPI**
+- Dynamic category-based filtering (sports, business, entertainment, etc.)
+- Search functionality for any topic or keyword
+- Responsive card-based news grid layout
+- Interactive modals for full article views
+- Social media sharing integration
+- Image lazy loading, cache optimization, and error fallback handling
 
-### Weather Widget
-- Real-time weather updates
-- Location-based weather data
-- Dynamic weather icons
-- Temperature and conditions display
+### 📺 Live TV Streaming
+- Multiple national and international live news channels
+- Integrated **HLS.js** custom video player
+- Manual/auto video quality selection (Auto/High/Medium/Low)
+- Stream health monitoring and auto-retry support
+- Channel metadata and overlay information display
+- Hotkeys for enhanced accessibility (Play/Pause, Fullscreen, Volume)
+- Fully responsive, mobile-optimized player with touch gestures
 
-### UI/UX Features
-- Dark/Light theme toggle
-- Responsive design for all devices
-- Modern animations and transitions
-- Loading states and error handling
-- Touch-friendly interface
+### ☁️ Weather Widget
+- Real-time, geolocation-based weather data using **OpenWeatherMap API**
+- Auto-detect user's location and show relevant forecast
+- Dynamic weather icon rendering and animated transitions
+- Clean display of temperature, weather conditions, and city name
 
-## 🛠️ Technical Stack
+### 🧑‍🎨 UI/UX Highlights
+- Dark/Light mode with persistent user settings
+- Smooth transitions, loading skeletons, and micro-interactions
+- Fully responsive design using a mobile-first approach
+- Seamless theme switching, hover effects, and touch responsiveness
+- Error handling for API failures and poor network conditions
 
-### Frontend
-- Vanilla JavaScript (ES6+)
-- CSS3 with Custom Properties
-- HTML5 with Semantic Elements
-- HLS.js for video streaming
-- Font Awesome icons
-- Custom video player implementation
+---
 
-### Backend
-- Node.js
-- Express.js
-- CORS support
-- Environment variable configuration
-- Static file serving
-- API proxying and caching
+## 🎓 Tech Stack & Tools Used
 
-### APIs Used
-- NewsAPI for news content
-- OpenWeatherMap for weather data
-- HLS streams for live TV
+| Technology        | Logo                                                                 |
+|-------------------|----------------------------------------------------------------------|
+| HTML5             | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) |
+| CSS3              | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)  |
+| JavaScript (ES6+) | ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
+| Node.js           | ![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) |
+| Express.js        | ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) |
+| HLS.js            | ![HLS.js](https://img.shields.io/badge/HLS.js-FF9900?style=for-the-badge&logo=hulu&logoColor=white) |
+| Font Awesome      | ![FontAwesome](https://img.shields.io/badge/Font%20Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white) |
+| Render            | ![Render](https://img.shields.io/badge/Render-3D348B?style=for-the-badge&logo=render&logoColor=white) |
+| Vercel            | ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) |
+| Git + GitHub      | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) |
 
-## 📦 Installation
+---
 
-1. Clone the repository:
-\`\`\`bash
+## ⚙️ Installation & Local Setup
+
+### 1. Clone the Repository
+```bash
 git clone https://github.com/yourusername/modern-news-app.git
 cd modern-news-app
-\`\`\`
+```
 
-2. Install dependencies:
-\`\`\`bash
+### 2. Install Backend Dependencies
+```bash
 npm install
-\`\`\`
+```
 
-3. Create a \`.env\` file in the root directory:
-\`\`\`env
+### 3. Setup Environment Variables
+Create a `.env` file in the project root:
+```env
 PORT=3000
-NEWS_API_KEY=your_news_api_key
-WEATHER_API_KEY=your_weather_api_key
-\`\`\`
+NEWS_API_KEY=your_news_api_key_here
+WEATHER_API_KEY=your_openweather_api_key_here
+```
 
-4. Start the server:
-\`\`\`bash
+### 4. Run Locally
+```bash
 npm start
-\`\`\`
+```
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-5. Open http://localhost:3000 in your browser
+---
 
-## 🎮 Usage
+## ☁️ Deployment Guide (Free Hosting)
 
-### Video Player Controls
-- Space: Play/Pause
-- M: Mute/Unmute
-- F: Toggle Fullscreen
-- Click on video: Play/Pause
-- Progress bar: Seek through video
-- Volume slider: Adjust volume
+### 📱 Backend Deployment on [Render](https://render.com)
 
-### News Navigation
-- Click category buttons to filter news
-- Use search bar for specific topics
-- Click news cards to view details
-- Share buttons in news modal
-- Theme toggle in header
+1. Create a new public GitHub repository with only the backend files:
+    - `server.js`
+    - `package.json`
+    - `.env` (don't upload this, add keys in Render Dashboard later)
+
+2. Go to [render.com](https://render.com), sign in with GitHub, and click **"New Web Service"**.
+3. Select your backend repo and configure:
+    - Build Command: `npm install`
+    - Start Command: `node server.js`
+    - Runtime: Node
+4. Add **Environment Variables**:
+    - `NEWS_API_KEY` = `your_key`
+    - `WEATHER_API_KEY` = `your_key`
+5. Deploy and get your backend URL like `https://news-api-backend.onrender.com`
+
+### 🌐 Frontend Deployment on [Vercel](https://vercel.com)
+
+1. Push your frontend files (`index.html`, `style.css`, `app.js`, etc.) into a separate GitHub repo.
+2. Login to [vercel.com](https://vercel.com), click **New Project**, and select your frontend repo.
+3. Set publish directory as `./` (if files are at root).
+4. Deploy and get a frontend URL like `https://modern-news-app.vercel.app`
+
+### 🔧 Final Step: Link Frontend to Backend
+In `app.js`, replace this line:
+```js
+const NEWS_BASE_URL = 'http://localhost:3000/api/news';
+```
+with:
+```js
+const NEWS_BASE_URL = 'https://news-api-backend.onrender.com/api/news';
+```
+
+---
 
 ## 📱 Mobile Support
-- Responsive design works on all devices
-- Touch-optimized video controls
-- Swipe gestures for navigation
-- Optimized images for mobile
-- Mobile-first approach
+- Mobile-first responsive layout
+- Touch-friendly video controls and buttons
+- Performance optimized for low-end devices
+- Lazy loading and caching for faster experience
 
-## 🔧 Configuration
+---
 
-### Environment Variables
-- \`PORT\`: Server port (default: 3000)
-- \`NEWS_API_KEY\`: Your NewsAPI key
-- \`WEATHER_API_KEY\`: Your OpenWeatherMap key
+## 🛄 Contribution Workflow
+1. Fork this repository
+2. Create a new feature branch
+3. Push your changes
+4. Open a Pull Request with detailed description
 
-### API Endpoints
-- \`/api/news\`: Get news articles
-- \`/api/news/search\`: Search news
-- \`/api/weather\`: Get weather data
+---
 
-## 🤝 Contributing
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a pull request
+## 🧪 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more info.
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+---
 
-## 🙏 Acknowledgments
-- NewsAPI for news data
-- OpenWeatherMap for weather data
-- HLS.js for video streaming
-- Font Awesome for icons
+## 🙏 Credits
+- NewsAPI
+- OpenWeatherMap
+- HLS.js
+- Font Awesome
+- Render and Vercel for free hosting
+
+---
+
+> Built with ❤️ by [Shadow Studio Agency](https://shadowstudio.in)
+
+
