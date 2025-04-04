@@ -9,7 +9,7 @@ const CHANNELS = {
 };
 
 // News API Base URL (local proxy)
-const NEWS_BASE_URL = 'http://localhost:3000/api/news';
+const NEWS_BASE_URL = 'https://full-stack-news-app.onrender.com/api/news';
 
 // DOM Elements
 const searchInput = document.getElementById('searchInput');
